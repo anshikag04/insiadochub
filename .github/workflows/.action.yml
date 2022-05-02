@@ -24,6 +24,10 @@ jobs:
           prop_path: 'version'
       - name: Shows Version
         run: echo ${{steps.getversion.outputs.prop}}
+      
+      #Login to docker
+      - name: login docker
+        run : docker login --${{ secrets.DOCKERHUB_USERNAME }} --${{ secrets.DOCKERHUB_Password }}-stdin anshikag04/insiatest
 
       #check out the code
       - name: Checkout
