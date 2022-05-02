@@ -49,7 +49,6 @@ jobs:
           context: .
           push: true
           tags: <image name>:${{steps.getversion.outputs.prop}}
-          ssh: default
           cache-from: type=local,src=/tmp/.buildx-cache   
           cache-to: type=local,dest=/tmp/.buildx-cache-new
       
