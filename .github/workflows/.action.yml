@@ -6,11 +6,10 @@ on:
       - "master"
 
 jobs: 
-  findVersion:
+  dockerise:
     runs-on: ubuntu-latest
-
-    #Checking out branch
     steps:
+      #check out the code
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
@@ -25,10 +24,6 @@ jobs:
           prop_path: 'version'
       - name: Shows Version
         run: echo ${{steps.getversion.outputs.prop}}
-
-  dockerise:
-    runs-on: ubuntu-latest
-    steps:
 
       #check out the code
       - name: Checkout
